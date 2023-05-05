@@ -32,6 +32,7 @@ require __DIR__ . '/Database/db.php';
     <title>Animal Shop</title>
 </head>
 <body>
+    <style> img{max-height: 200px;}</style>
 <header class="bg-dark text-white p-5 text-center"> 
     <h1>Animal Shop</h1>  
   </header>
@@ -41,7 +42,7 @@ require __DIR__ . '/Database/db.php';
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">Nome</th>
           <th scope="col">Categoria</th>
           <th scope="col">Nome</th>
           <th scope="col">Prezzo</th>
@@ -73,12 +74,14 @@ require __DIR__ . '/Database/db.php';
         <tr>
           <th scope="col">Nome</th>
           <th scope="col">Categoria</th>
-          <th scope="col">Nome</th>
+          <th scope="col">Materiale</th>
           <th scope="col">Prezzo</th>
           <th scope="col">Immagine del prodotto</th>
         </tr>
       </thead>
       <tbody>
+      
+        
         
       </tbody>
     
@@ -96,7 +99,13 @@ require __DIR__ . '/Database/db.php';
         </tr>
       </thead>
       <tbody>
-       
+      <?php foreach($accessory as $item): ?>
+          <tr>
+            <td><?php echo $item->name?></td>
+            <td><?php echo $item->category->icon ?></td>
+            <td><?php echo $item->name  ?></td>
+            <td>
+            <?php endforeach; ?>
       </tbody>
     
     </table>
