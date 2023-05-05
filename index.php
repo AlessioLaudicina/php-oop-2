@@ -12,6 +12,7 @@ require_once __DIR__ . '/Models/Product.php';
 require_once __DIR__ . '/Models/Category.php';
 require_once __DIR__ . '/Models/Food.php';
 require_once __DIR__ . '/Models/Accesory.php';
+require_once __DIR__ . '/Models/Toys.php';
 require __DIR__ . '/Database/db.php';
 
 
@@ -74,12 +75,20 @@ require __DIR__ . '/Database/db.php';
         <tr>
           <th scope="col">Nome</th>
           <th scope="col">Categoria</th>
-          <th scope="col">Materiale</th>
+          
           <th scope="col">Prezzo</th>
           <th scope="col">Immagine del prodotto</th>
         </tr>
       </thead>
       <tbody>
+      <?php foreach($toy as $item): ?>
+          <tr>
+            <td><?php echo $item->name?></td>
+            <td><?php echo $item->category->icon ?></td>
+            <td><?php echo $item->price ?></td>
+            <td><img src="<?php echo $item->image ?>" alt="<?php echo $item->name ?>" title="<?php echo $item->name ?>"></td>
+            
+            <?php endforeach; ?>
       
         
         
@@ -102,10 +111,13 @@ require __DIR__ . '/Database/db.php';
       <?php foreach($accessory as $item): ?>
           <tr>
             <td><?php echo $item->name?></td>
-            <td><?php echo $item->category->icon ?></td>
-            <td><?php echo $item->name  ?></td>
-            <td>
+            <td><?php echo $item->category?></td>
+            <td><?php echo $item->price ?></td>
+            <td><img src="<?php echo $item->image ?>" alt="<?php echo $item->name ?>" title="<?php echo $item->name ?>"></td>
+            
             <?php endforeach; ?>
+      
+      
       </tbody>
     
     </table>
