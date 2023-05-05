@@ -11,6 +11,7 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
 require_once __DIR__ . '/Models/Product.php';
 require_once __DIR__ . '/Models/Category.php';
 require_once __DIR__ . '/Models/Food.php';
+require_once __DIR__ . '/Models/Accesory.php';
 require __DIR__ . '/Database/db.php';
 
 
@@ -48,6 +49,19 @@ require __DIR__ . '/Database/db.php';
         </tr>
       </thead>
       <tbody>
+      <?php foreach($food as $item): ?>
+          <tr>
+            <td><?php echo $item->name ?></td>
+            <td><?php echo $item->category->icon ?></td>
+            <td><?php echo $item->name ?></td>
+            <td>
+          
+                <p><?php echo $item->price ?>€</p>
+             
+            </td>
+            <td><img src="<?php echo $item->image ?>" alt="<?php echo $item->name ?>" title="<?php echo $item->name ?>"></td>
+          </tr>
+          <?php endforeach; ?>
         
       </tbody>
     
@@ -57,7 +71,7 @@ require __DIR__ . '/Database/db.php';
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">Nome</th>
           <th scope="col">Categoria</th>
           <th scope="col">Nome</th>
           <th scope="col">Prezzo</th>
