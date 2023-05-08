@@ -45,7 +45,6 @@ require __DIR__ . '/Database/db.php';
         <tr>
           <th scope="col">Nome</th>
           <th scope="col">Categoria</th>
-          <th scope="col">Nome</th>
           <th scope="col">Prezzo</th>
           <th scope="col">Immagine del prodotto</th>
         </tr>
@@ -55,7 +54,7 @@ require __DIR__ . '/Database/db.php';
           <tr>
             <td><?php echo $item->name ?></td>
             <td><?php echo $item->category->icon ?></td>
-            <td><?php echo $item->name ?></td>
+            
             <td>
           
                 <p><?php echo $item->price ?>€</p>
@@ -100,9 +99,9 @@ require __DIR__ . '/Database/db.php';
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Categoria</th>
           <th scope="col">Nome</th>
+          <th scope="col">Categoria</th>
+          
           <th scope="col">Prezzo</th>
           <th scope="col">Immagine del prodotto</th>
         </tr>
@@ -111,7 +110,7 @@ require __DIR__ . '/Database/db.php';
       <?php foreach($accessory as $item): ?>
           <tr>
             <td><?php echo $item->name?></td>
-            <td><?php echo $item->category?></td>
+            <td><?php echo $item->category->icon?></td>
             <td><?php echo $item->price ?></td>
             <td><img src="<?php echo $item->image ?>" alt="<?php echo $item->name ?>" title="<?php echo $item->name ?>"></td>
             
