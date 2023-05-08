@@ -40,6 +40,8 @@ require __DIR__ . '/Database/db.php';
 
   <div class="container">
   <h3>Alimenti</h3>
+  
+
     <table class="table table-striped">
       <thead>
         <tr>
@@ -57,7 +59,7 @@ require __DIR__ . '/Database/db.php';
             
             <td>
           
-                <p><?php echo $item->price ?>€</p>
+                <p><?php echo $item->price ?>$</p>
              
             </td>
             <td><img src="<?php echo $item->image ?>" alt="<?php echo $item->name ?>" title="<?php echo $item->name ?>"></td>
@@ -84,7 +86,7 @@ require __DIR__ . '/Database/db.php';
           <tr>
             <td><?php echo $item->name?></td>
             <td><?php echo $item->category->icon ?></td>
-            <td><?php echo $item->price ?></td>
+            <td><?php echo $item->price ?> $</td>
             <td><img src="<?php echo $item->image ?>" alt="<?php echo $item->name ?>" title="<?php echo $item->name ?>"></td>
             
             <?php endforeach; ?>
@@ -111,7 +113,7 @@ require __DIR__ . '/Database/db.php';
           <tr>
             <td><?php echo $item->name?></td>
             <td><?php echo $item->category->icon?></td>
-            <td><?php echo $item->price ?></td>
+            <td><?php echo $item->price ?> $</td>
             <td><img src="<?php echo $item->image ?>" alt="<?php echo $item->name ?>" title="<?php echo $item->name ?>"></td>
             
             <?php endforeach; ?>
@@ -121,7 +123,7 @@ require __DIR__ . '/Database/db.php';
     
     </table>
   </div>
-
+  </div>
     
 </body>
 </html>
